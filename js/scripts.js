@@ -19,22 +19,33 @@ function roll() {
     passTurn();
   }
   else {
-    score += randomNumber;
+    score += randomNumber; //This adds up the score
   }
 }
 
 function passTurn () {
-  if(player1Turn) {
-    player1.score += score;
-    player1Turn !== player1Turn; //Saying this is "not" Player1's turn, so "true" turns to "false"
+  if (player1Turn) {
+    player1.score += score; //This adds the die score to the Player's constructor score
+    player1Turn =! player1Turn; //Saying this is "not" Player1's turn, so "true" turns to "false"
+    winner();
     alert("Player2, it's your turn!");
   }
   else {
-  player1Turn !== player1Turn; //signifies player2turn (player1Turn = "false")
+  player1Turn =! player1Turn; //signifies player2turn (player1Turn = "false")
     player2.score += score;
+    winner();
     alert("Player1, it's your turn!");
   }
 };
+
+function winner() {
+  if (player1.score > 100) {
+    alert("Player1, you are the winner!")
+  }
+  else if (player2.score > 100) {
+    alert("Player2, you are the winner!")
+  }
+}
 
 $(document).ready(function() {
   $("#roll-button").click(function() {
