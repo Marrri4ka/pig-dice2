@@ -55,7 +55,8 @@ $(document).ready(function() {
     roll(); //the functon that runs once the Roll button is clicked
     //  $("#roll-area").text(randomNumber);
     //   $("#roll-area").show();
-          $("#roll-area").attr("src","img/"+ randomNumber + ".png");
+
+          $("#image").attr("src","img/"+ randomNumber + ".png");
 
 
             //  $("#roll-area").attr(src="img/+randomNumber + ".png"");
