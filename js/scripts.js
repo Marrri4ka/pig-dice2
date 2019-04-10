@@ -53,8 +53,12 @@ function winner() {
 $(document).ready(function() {
   $("#roll-button").click(function() {
     roll(); //the functon that runs once the Roll button is clicked
-     $("#roll-area").text(randomNumber);
-          $("#roll-area").show();
+    //  $("#roll-area").text(randomNumber);
+    //   $("#roll-area").show();
+          $("#roll-area").attr("src","img/"+ randomNumber + ".png");
+
+
+            //  $("#roll-area").attr(src="img/+randomNumber + ".png"");
 
   });
   $("#pass-turn").click(function() {
@@ -67,6 +71,7 @@ $(document).ready(function() {
   });
   $("#play").click(function(event){
     event.preventDefault();
+
 
     $(".names").slideUp();
     $("#pig-dice").slideDown();
