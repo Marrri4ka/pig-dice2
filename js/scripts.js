@@ -42,11 +42,13 @@ function passTurn () {
 };
 
 function winner() {
-  if (player1.score > 100) {
-    alert("Player1, you are the winner!")
+  if (player1.score > 10) {
+    $("#image1").attr("src","img/winner.jpg");
+    $("#pig-dice").slideUp();
   }
-  else if (player2.score > 100) {
-    alert("Player2, you are the winner!")
+  else if (player2.score > 10) {
+    $("#image1").attr("src","img/winner.jpg");
+      $("#pig-dice").slideUp();
   }
 }
 
