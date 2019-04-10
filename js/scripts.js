@@ -5,6 +5,9 @@ var player1Turn = true;
 var randomNumber;
 var score = 0;
 
+
+
+
 function Player (name) {
   this.name = name,
   this.score = 0
@@ -50,8 +53,28 @@ function winner() {
 $(document).ready(function() {
   $("#roll-button").click(function() {
     roll(); //the functon that runs once the Roll button is clicked
+     $("#roll-area").text(randomNumber);
+          $("#roll-area").show();
+
   });
   $("#pass-turn").click(function() {
     passTurn(); //the function that runs once the Pass-turn button is clicked
+    $("#player1-area").text(player1.score);
+      $("#player1-area").show();
+
+    $("#player2-area").text(player2.score);
+      $("#player2-area").show();
+  });
+  $("#play").click(function(event){
+    event.preventDefault();
+
+    $(".names").slideUp();
+    $("#pig-dice").slideDown();
+    var name1 = $("input#username1").val();
+    var name2 = $("input#username2").val();
+    $("#player-one").text(name1);
+    $("#player-one").show(name1);
+    $("#player-two").text(name2);
+    $("#player-two").show(name2);
   });
 });

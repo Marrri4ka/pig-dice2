@@ -11,11 +11,70 @@
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
+        <h1>Pig Dice</h1>
+      </div>
+      <div class="names">
 
-      <button type="button" name="button" id="roll-button">Roll</button>
 
-      <button type="button" name="button" id="pass-turn">Pass Turn</button>
-      
+      <form class="player-names">
+        <div class="form-group">
+          <label for="username1">Player One, please enter your name:</label>
+          <input type="text" id="username1" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="username2">Player Two, please enter your name:</label>
+          <input type="text" id="username2" class="form-control">
+        </div>
+        <button type="click" class="btn btn-danger" id="play">Play</button>
+      </form>
+      </div>
+      <div id="pig-dice">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4><span id="player-one"></span></h4>
+              </div>
+              <div class="panel-body">
+                <p>Your score is:</p>
+                <textarea id ="player1-area" disabled class="form-control" rows="3"></textarea>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4><span id="player-two"></span></h4>
+              </div>
+              <div class="panel-body">
+                <p>Your score is:</p>
+                <textarea id ="player2-area" disabled class="form-control" rows="3"></textarea>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4>Roll</h4>
+              </div>
+              <div class="panel-body">
+                <p>You rolled:</p>
+                <textarea id="roll-area"disabled class="form-control" rows="3"></textarea>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" name="button" id="roll-button" class="btn btn-success btn-lg btn-block">Roll</button>
+
+        <button type="button" name="button" id="pass-turn" class="btn btn-danger btn-lg btn-block">Pass Turn</button>
+      </div>
     </div>
   </body>
 </html>
