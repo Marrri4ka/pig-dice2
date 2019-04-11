@@ -2,7 +2,7 @@ var player1 = new Player("Anna");
 var player2 = new Player("Mariia");
 var player1Turn = true;
 var playingAgainstComputerEasy = false;
-var playingAgainstComputerHard = false;
+// var playingAgainstComputerHard = false;
 var randomNumber;
 var score = 0;
 
@@ -13,21 +13,21 @@ function Player(name) {
   this.name = name,
     this.score = 0
 }
-
+//
 function easyGame(){
   roll();
   roll();
   alert("Computers score is  " + score);
   passTurn();
 }
-//
-function hardGame(){
-  if(score>=10){
-passTurn();
-  } else if (score <=1){
-    hardGame();
-  }
-}
+// //
+// function hardGame(){
+//   if(score>=10){
+// passTurn();
+//   } else if (score <=1){
+//     hardGame();
+//   }
+// }
 
 
 
@@ -51,10 +51,11 @@ function passTurn() {
     $("#current-player").text($("input#username1").val());
     $("#current-player").show($("input#username1").val());
     $(".current-player").show();
-    if(playingAgainstComputerEasy){
-      easyGame();
-    } else if (playingAgainstComputerHard){
-      hardGame();
+    // if(playingAgainstComputerEasy){
+    //   easyGame();
+
+    // } else if (playingAgainstComputerHard){
+    //   hardGame();
 
   } else {
     player1Turn = !player1Turn;
@@ -65,7 +66,9 @@ function passTurn() {
     $("#current-player").show($("input#username2").val());
     $(".current-player").show();
   }
-  }
+// }
+// }
+
 };
 
 function winner() {
@@ -109,15 +112,16 @@ $(document).ready(function() {
   });
   $("#easy").click(function() {
     playingAgainstComputerEasy = true;
-    $(".levels").slideUp();
-    $("#pig-dice").slideDown();
-  });
 
-  $("#hard").click(function() {
-    playingAgainstComputerHard = true;
     $(".levels").slideUp();
     $("#pig-dice").slideDown();
   });
+  // // //
+  // $("#hard").click(function() {
+  //   playingAgainstComputerHard = true;
+  //   $(".levels").slideUp();
+  //   $("#pig-dice").slideDown();
+  // });
 
   $ ("#vs-computer").click(function(){
     $(".levels").slideDown();
