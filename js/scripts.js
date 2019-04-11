@@ -55,7 +55,7 @@ function passTurn() {
       easyGame();
     } else if (playingAgainstComputerHard){
       hardGame();
-    
+
   } else {
     player1Turn = !player1Turn;
     player2.score += score;
@@ -64,6 +64,7 @@ function passTurn() {
     $("#current-player").text($("input#username2").val());
     $("#current-player").show($("input#username2").val());
     $(".current-player").show();
+  }
   }
 };
 
@@ -107,12 +108,13 @@ $(document).ready(function() {
 
   });
   $("#easy").click(function() {
-    playingAgainstComputerHard = true;
+    playingAgainstComputerEasy = true;
     $(".levels").slideUp();
     $("#pig-dice").slideDown();
   });
+
   $("#hard").click(function() {
-    playingAgainstComputerEasy = true;
+    playingAgainstComputerHard = true;
     $(".levels").slideUp();
     $("#pig-dice").slideDown();
   });
@@ -126,8 +128,5 @@ $(document).ready(function() {
     $(".names").slideDown();
     $(".comp-vs-human").slideUp();
   });
-
-
-
 
 });
