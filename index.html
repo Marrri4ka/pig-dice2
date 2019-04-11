@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="img"></script>
-    <title>roll-dice</title>
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Pig Dice</h1>
-      </div>
-      <div class="names">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="img"></script>
+  <title>roll-dice</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pig Dice</h1>
+    </div>
+    <div class="names">
 
 
       <form class="player-names">
@@ -29,57 +31,64 @@
         </div>
         <button type="click" class="btn btn-danger" id="play">Play</button>
       </form>
-      </div>
-      <div id="pig-dice">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h4><span id="player-one"></span></h4>
-              </div>
-              <div class="panel-body">
-                <p>Your score is:</p>
-                <textarea id ="player1-area" disabled class="form-control" rows="3"></textarea>
-
-              </div>
+    </div>
+    <div id="pig-dice">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4><span id="player-one"></span></h4>
             </div>
-          </div>
+            <div class="panel-body">
+              <p>Your score is:</p>
+              <textarea id="player1-area" disabled class="form-control" rows="3"></textarea>
 
-          <div class="col-md-5">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h4><span id="player-two"></span></h4>
-              </div>
-              <div class="panel-body">
-                <p>Your score is:</p>
-                <textarea id ="player2-area" disabled class="form-control" rows="3"></textarea>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-2">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h4>Roll</h4>
-              </div>
-              <div class="panel-body">
-                <p>You rolled:</p>
-                <img id = "image">
-
-
-
-              </div>
             </div>
           </div>
         </div>
 
-        <button type="button" name="button" id="roll-button" class="btn btn-success btn-lg btn-block">Roll</button>
+        <div class="col-md-5">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4><span id="player-two"></span></h4>
+            </div>
+            <div class="panel-body">
+              <p>Your score is:</p>
+              <textarea id="player2-area" disabled class="form-control" rows="3"></textarea>
 
-        <button type="button" name="button" id="pass-turn" class="btn btn-danger btn-lg btn-block">Pass Turn</button>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-md-2">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4>Roll</h4>
+            </div>
+            <div class="panel-body">
+              <p>You rolled:</p>
+              <img id="image">
+
+
+
+            </div>
+          </div>
+        </div>
       </div>
-      <img id = "image1">
+
+      <button type="button" name="button" id="roll-button" class="btn btn-success btn-lg btn-block">Roll</button>
+
+      <button type="button" name="button" id="pass-turn" class="btn btn-danger btn-lg btn-block">Pass Turn</button>
+
     </div>
-  </body>
+    <img id="image1">
+    <div class="levels">
+      <h4 id="difficulty" class="well">Please select difficulty!</h4>
+      <button id="easy" type="button" class="btn btn-primary btn-lg btn-block">Easy</button>
+      <button id="hard " type="button" class="btn btn-default btn-lg btn-block">Hard</button>
+    </div>
+
+  </div>
+</body>
+
 </html>
