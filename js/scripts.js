@@ -12,6 +12,15 @@ function Player(name) {
     this.score = 0
 }
 
+function easyGame(){
+roll();
+roll();
+alert("Computers score is  " + score);
+passTurn();
+alert("Playert it is your turn");
+
+}
+
 
 function roll() {
   randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -29,6 +38,7 @@ function passTurn() {
     player1.score += score; //This adds the die score to the Player's constructor score
     player1Turn = !player1Turn; //Saying this is "not" Player1's turn, so "true" turns to "false"
     winner();
+    score=0;
     $("#current-player").text($("input#username1").val());
     $("#current-player").show($("input#username1").val());
     $(".current-player").show();
@@ -36,6 +46,7 @@ function passTurn() {
     player1Turn = !player1Turn; //signifies player2turn (player1Turn = "false")
     player2.score += score;
     winner();
+      score=0;
     $("#current-player").text($("input#username2").val());
     $("#current-player").show($("input#username2").val());
     $(".current-player").show();
@@ -54,7 +65,8 @@ function winner() {
 
 $(document).ready(function() {
   $("#roll-button").click(function() {
-    roll(); //the functon that runs once the Roll button is clicked
+    roll();
+    // easyGame(); //the functon that runs once the Roll button is clicked
 
     $("#image").attr("src", "img/" + randomNumber + ".png");
 
@@ -70,22 +82,30 @@ $(document).ready(function() {
   });
   $("#play").click(function(event) {
     event.preventDefault();
-
-
     $(".names").slideUp();
-
-    $(".levels").slideDown();
+    $("#pig-dice").slideDown();
     var name1 = $("input#username1").val();
     var name2 = $("input#username2").val();
-  });
-  $("#easy").click(function() {
-    $(".levels").slideUp();
-    $("#pig-dice").slideDown();
     $("#player-one").text(name1);
     $("#player-one").show(name1);
     $("#player-two").text(name2);
     $("#player-two").show(name2);
+
+  });
+  $("#easy").click(function() {
+    $(".levels").slideUp();
+    $("#pig-dice").slideDown();
+
   });
 
+  $ ("#vs-computer").click(function(){
+    $(".levels").slideDown();
+    $(".comp-vs-human").slideUp();
+  });
+
+  $ ("#vs-humans").click(function(){
+    $(".names").slideDown();
+    $(".comp-vs-human").slideUp();
+  });
 
 });
