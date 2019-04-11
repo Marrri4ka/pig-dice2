@@ -1,6 +1,7 @@
 var player1 = new Player("Anna");
 var player2 = new Player("Mariia");
 var player1Turn = true;
+var playingAgainstComputer = false;
 var randomNumber;
 var score = 0;
 
@@ -13,12 +14,10 @@ function Player(name) {
 }
 
 function easyGame(){
-roll();
-roll();
-alert("Computers score is  " + score);
-passTurn();
-alert("Playert it is your turn");
-
+  roll();
+  roll();
+  alert("Computers score is  " + score);
+  passTurn();
 }
 
 
@@ -29,21 +28,24 @@ function roll() {
     score = 0;
     passTurn();
   } else {
-    score += randomNumber; //This adds up the score
+    score += randomNumber;
   }
 }
 
 function passTurn() {
   if (player1Turn) {
-    player1.score += score; //This adds the die score to the Player's constructor score
-    player1Turn = !player1Turn; //Saying this is "not" Player1's turn, so "true" turns to "false"
+    player1.score += score;
+    player1Turn = !player1Turn;
     winner();
     score=0;
     $("#current-player").text($("input#username1").val());
     $("#current-player").show($("input#username1").val());
     $(".current-player").show();
+    if(playingAgainstComputer){
+      easyGame();
+    }
   } else {
-    player1Turn = !player1Turn; //signifies player2turn (player1Turn = "false")
+    player1Turn = !player1Turn;
     player2.score += score;
     winner();
       score=0;
@@ -66,14 +68,14 @@ function winner() {
 $(document).ready(function() {
   $("#roll-button").click(function() {
     roll();
-    // easyGame(); //the functon that runs once the Roll button is clicked
+
 
     $("#image").attr("src", "img/" + randomNumber + ".png");
 
 
   });
   $("#pass-turn").click(function() {
-    passTurn(); //the function that runs once the Pass-turn button is clicked
+    passTurn();
     $("#player1-area").text(player1.score);
     $("#player1-area").show();
 
@@ -93,8 +95,10 @@ $(document).ready(function() {
 
   });
   $("#easy").click(function() {
+    playingAgainstComputer === true;
     $(".levels").slideUp();
     $("#pig-dice").slideDown();
+
 
   });
 
@@ -107,5 +111,8 @@ $(document).ready(function() {
     $(".names").slideDown();
     $(".comp-vs-human").slideUp();
   });
+
+
+
 
 });
