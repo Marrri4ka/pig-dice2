@@ -1,7 +1,8 @@
 var player1 = new Player("Anna");
 var player2 = new Player("Mariia");
 var player1Turn = true;
-var playingAgainstComputer = false;
+var playingAgainstComputerEasy = false;
+var playingAgainstComputerHard = false;
 var randomNumber;
 var score = 0;
 
@@ -19,6 +20,15 @@ function easyGame(){
   alert("Computers score is  " + score);
   passTurn();
 }
+//
+function hardGame(){
+  if(score>=10){
+passTurn();
+  } else if (score <=1){
+    hardGame();
+  }
+}
+
 
 
 function roll() {
@@ -41,9 +51,11 @@ function passTurn() {
     $("#current-player").text($("input#username1").val());
     $("#current-player").show($("input#username1").val());
     $(".current-player").show();
-    if(playingAgainstComputer){
+    if(playingAgainstComputerEasy){
       easyGame();
-    }
+    } else if (playingAgainstComputerHard){
+      hardGame();
+    
   } else {
     player1Turn = !player1Turn;
     player2.score += score;
@@ -95,11 +107,14 @@ $(document).ready(function() {
 
   });
   $("#easy").click(function() {
-    playingAgainstComputer === true;
+    playingAgainstComputerHard = true;
     $(".levels").slideUp();
     $("#pig-dice").slideDown();
-
-
+  });
+  $("#hard").click(function() {
+    playingAgainstComputerEasy = true;
+    $(".levels").slideUp();
+    $("#pig-dice").slideDown();
   });
 
   $ ("#vs-computer").click(function(){
